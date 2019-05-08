@@ -17,7 +17,7 @@ includedir = "/usr/include/xenomai"
 
 EXTRA_OECONF += "--enable-smp \
                 --with-core=cobalt \
-                --prefix=/"
+                --prefix="
                 
 PACKAGES += "${PN}-demos"
 

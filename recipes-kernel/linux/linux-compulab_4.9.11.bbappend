@@ -24,7 +24,7 @@ do_add_xenomai () {
     # Prepare kernel
     
     ${XENOMAI_SRC}/scripts/prepare-kernel.sh --arch=${ARCH} --linux=${S} --ipipe="${WORKDIR}/${IPIPE_PATCH}" --default
-    cp config_imx7d_xenomai ${S}/.config
+    cp ${WORKDIR}/config_imx7d_xenomai ${B}/.config
     
 }
 
