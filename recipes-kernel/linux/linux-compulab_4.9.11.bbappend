@@ -13,6 +13,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 IPIPE_PATCH = "ipipe-4.9.11-imx-arm.patch"
 SRC_URI += "file://${IPIPE_PATCH};apply=0"
 SRC_URI += "file://fix_no_power_saving_modes_imx7d_4.9.11.patch"
+SRC_URI += "file://config_imx7d_xenomai;apply=0"
 
 XENOMAI_SRC = "${WORKDIR}/xenomai-3.0.8"
 
@@ -23,6 +24,7 @@ do_add_xenomai () {
     # Prepare kernel
     
     ${XENOMAI_SRC}/scripts/prepare-kernel.sh --arch=${ARCH} --linux=${S} --ipipe="${WORKDIR}/${IPIPE_PATCH}" --default
+    cp config_imx7d_xenomai ${S}/.config
     
 }
 
