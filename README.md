@@ -4,4 +4,4 @@ In theory the layer can be used for other hardware as well as the patches are ma
 
 As this layer uses the .bbappend, Xenomai will automatically be added when this layer is included. Add the "xenomai" package to the image for the tests and libraries.
 
-In order for Xenomai to work properly, the power saving has to be deactivated. However the i.mx kernel has some bugs when doing this, so a patch is needed. Use at your own risk!
+In order for Xenomai to work properly, the power saving has to be deactivated. However the i.mx kernel has some bugs when doing this, so a patch is needed. Use at your own risk and only us it for an i.MX7D!
