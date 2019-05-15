@@ -10,22 +10,7 @@ SRC_URI[xeno.sha256sum] = "c373261ddb8280d9d7078cdd9cd9646dfb7d70d8cd3aa9693d914
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-IPIPE_PATCH = "ipipe-4.9.11-imx-arm.patch"
-SRC_URI += "file://${IPIPE_PATCH};apply=0"
-SRC_URI += "file://fix_no_power_saving_modes_imx7d_4.9.11.patch"
-SRC_URI += "file://config_imx7d_xenomai;apply=0"
+SRC_URI += "patch-4.9.11-rt9.patch"
 
-XENOMAI_SRC = "${WORKDIR}/xenomai-3.0.8"
 
 #INHIBIT_DEFAULT_DEPS = "1"
-
-
-do_add_xenomai () {
-    # Prepare kernel
-    
-    ${XENOMAI_SRC}/scripts/prepare-kernel.sh --arch=${ARCH} --linux=${S} --ipipe="${WORKDIR}/${IPIPE_PATCH}" --default
-    cp ${WORKDIR}/config_imx7d_xenomai ${B}/.config
-    
-}
-
-addtask add_xenomai after do_preconfigure before do_configure
