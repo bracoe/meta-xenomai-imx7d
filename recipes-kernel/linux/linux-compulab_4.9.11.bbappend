@@ -15,3 +15,5 @@ SRC_URI += "file://fix_no_power_saving_modes_imx7d_4.9.11.patch"
 do_rt_config () {
 	cp ${WORKDIR}/config_imx7d_xenomai_merc ${B}/.config
 }
+
+addtask do_rt_config after do_preconfigure before do_configure
