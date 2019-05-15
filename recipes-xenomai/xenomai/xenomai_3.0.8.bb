@@ -16,7 +16,7 @@ inherit autotools pkgconfig
 includedir = "/usr/include/xenomai"
 
 EXTRA_OECONF += "--enable-smp \
-                --with-core=cobalt \
+                --with-core=mercury \
                 --prefix="
                 
 PACKAGES += "${PN}-demos"
