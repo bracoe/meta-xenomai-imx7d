@@ -9,6 +9,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += "file://patch-4.9.11-rt9.patch"
 SRC_URI += "file://fix_no_power_saving_modes_imx7d_4.9.11.patch"
+SRC_URI += "file://config_imx7d_xenomai_merc;apply=0"
 
 #INHIBIT_DEFAULT_DEPS = "1"
 
